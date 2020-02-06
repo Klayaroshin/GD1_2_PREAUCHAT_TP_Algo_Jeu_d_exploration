@@ -1,27 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
-int ChoixDestination;
+char ChoixDestination[20];
 
 
 int main(){
 	
 	printf ("Quelle est la destination ou vous voulez aller ? \n");
-	printf ("Tapez (1) pour aller a Heilheim ou (2) pour aller a Tristram \n");
+	printf ("Tapez le nom de votre destination pour aller soit a Heilheim ou a Tristram \n");
 
-	scanf ("%d" ,&ChoixDestination);
-
-	 if (ChoixDestination==1){
-		 printf ( "vous etes arrive a Heilheim" );
-	 }
-
-	 if (ChoixDestination==2){
-		 printf ( "vous etes arrive a Tristram" );
+	scanf ("%s" ,ChoixDestination);
+		
+		if (strcmp(ChoixDestination,"Heilheim")== 0) {
+			 printf ( "vous etes arrive a Heilheim" );
+		}
 		 
-
-
-	 }
-
-	 return 0;
+		if (strcmp(ChoixDestination,"Tristram")== 0) {
+			 printf ( "vous etes arrive a Tristram" );
+		}
+	return 0;
 }
